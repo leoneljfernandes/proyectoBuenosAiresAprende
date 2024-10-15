@@ -1,6 +1,8 @@
 /* Estilos para el header */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 header {
-  background-color: #333; /* Color de fondo del header */
+  background-color: #2b373d; /* Color de fondo del header */
   color: #fff; /* Color del texto en el header */
   padding: 20px;
   display: flex;
@@ -17,24 +19,28 @@ header img {
 nav ul {
   list-style: none; /* Quitar viñetas */
   display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
+  gap: 10px;
+  padding: 30;
+  margin: 20px 0 20px 20px;
+  text-align: center;
+  font-size: 15px;
 }
 
 nav a {
   text-decoration: none; /* Quitar subrayado */
-  color: #fff; /* Color de texto del enlace */
+  color: #020000; /* Color de texto del enlace */
   font-weight: bold;
+  text-align: center;
+  text-align: center;
 }
 
 nav a:hover {
-  color: #ffa500; /* Color de texto del enlace al pasar el ratón */
+  color: #ffffff; /* Color de texto del enlace al pasar el ratón */
 }
 
 /* Estilos para el footer */
 footer {
-  background-color: #333; /* Color de fondo del footer */
+  background-color: #2b373d; /* Color de fondo del footer */
   color: #fff; /* Color del texto en el footer */
   text-align: center;
   padding: 10px;
@@ -43,8 +49,55 @@ footer {
 }
 
 /* Estilos globales de fuente */
-body {
-  font-family: Arial, sans-serif; /* Cambiar estilo de la fuente */
+* {
+  font-family: Lato, Roboto, sans-serif; /* Cambiar estilo de la fuente */
+  font-weight: 400; /* Peso de fuente por defecto */
   margin: 0;
   padding: 0;
+}
+
+/* Estilo para el body */
+main {
+  background-color: #4d8cb1;
+  font-weight: 800; /* Peso más grueso para el body */
+  font-size: 30px; /* Tamaño de fuente mayor para el body */
+}
+
+#contact{
+  font-weight: 800; /* Peso más grueso para el body */
+  font-size: 20px; /* Tamaño de fuente mayor para el body */
+}
+
+/* Sección y elementos más cercanos */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  gap: 0px; /* Espacio entre los elementos */
+}
+
+/* Estilo para el hgroup */
+#maintitle {
+  margin-bottom: 10px; /* Espacio más cercano al siguiente elemento */
+}
+
+/* Estilo para figuras de imagen y video */
+#image, #video {
+  margin: 10px 0; /* Espacio reducido entre imagen, video y otros elementos */
+}
+
+h1, h4 {
+  margin: 5px 0; /* Reduce el espacio entre el h1 y h4 */
+}
+
+section {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  text-align: center; /* Centra el texto dentro del hgroup */
+  min-height: 100vh; /* Opcional: Hace que la sección ocupe toda la altura de la ventana */
 }
