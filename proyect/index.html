@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My MarketPlace</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#reseñas">Reseñas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <img src="./img/logo_ljf.png" width="100" />
+    </header>
+
+    <main>
+      <section>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F39%2F8b%2Ffa%2F398bfa3dc777f8ec06764b935955c1ae.gif&f=1&nofb=1&ipt=26f58e727362722735bb932940e90d511912243811bdbbf73bd4cb8c5c5acd1b&ipo=images"
+          alt="Stock image" width="300" 
+        />
+
+        <figure>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            title="Video de presentación del proyecto"
+            allowfullscreen
+          ></iframe>
+          <figcaption>Video test</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Contacto</h2>
+        <form action="https://formspree.io/f/xrbggkog" method="POST">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label>
+            Your email:
+            <input type="email" name="email" />
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>

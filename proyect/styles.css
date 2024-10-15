@@ -1,0 +1,50 @@
+/* Estilos para el header */
+header {
+  background-color: #333; /* Color de fondo del header */
+  color: #fff; /* Color del texto en el header */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilos para el logo del header */
+header img {
+  width: 100px;
+}
+
+/* Estilos para el navbar */
+nav ul {
+  list-style: none; /* Quitar viñetas */
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none; /* Quitar subrayado */
+  color: #fff; /* Color de texto del enlace */
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffa500; /* Color de texto del enlace al pasar el ratón */
+}
+
+/* Estilos para el footer */
+footer {
+  background-color: #333; /* Color de fondo del footer */
+  color: #fff; /* Color del texto en el footer */
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+/* Estilos globales de fuente */
+body {
+  font-family: Arial, sans-serif; /* Cambiar estilo de la fuente */
+  margin: 0;
+  padding: 0;
+}
