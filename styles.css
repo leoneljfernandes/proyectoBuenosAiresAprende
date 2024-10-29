@@ -1,103 +1,183 @@
-/* Estilos para el header */
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-header {
-  background-color: #2b373d; /* Color de fondo del header */
-  color: #fff; /* Color del texto en el header */
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Estilos para el logo del header */
-header img {
-  width: 100px;
-}
-
-/* Estilos para el navbar */
-nav ul {
-  list-style: none; /* Quitar viñetas */
-  display: flex;
-  gap: 10px;
-  padding: 30;
-  margin: 20px 0 20px 20px;
-  text-align: center;
-  font-size: 15px;
-}
-
-nav a {
-  text-decoration: none; /* Quitar subrayado */
-  color: #020000; /* Color de texto del enlace */
-  font-weight: bold;
-  text-align: center;
-  text-align: center;
-}
-
-nav a:hover {
-  color: #ffffff; /* Color de texto del enlace al pasar el ratón */
-}
-
-/* Estilos para el footer */
-footer {
-  background-color: #2b373d; /* Color de fondo del footer */
-  color: #fff; /* Color del texto en el footer */
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-  font-size: 0.9em;
-}
-
-/* Estilos globales de fuente */
-* {
-  font-family: Lato, Roboto, sans-serif; /* Cambiar estilo de la fuente */
-  font-weight: 400; /* Peso de fuente por defecto */
+body {
+  background-color: #ffffff;
+  font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Estilo para el body */
+header {
+  background-color: #2b373d;
+  color: #fff;
+  padding: 0.5vw;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+header img {
+  width: 10vw;
+  
+  height: auto;
+}
+
+/* Navbar */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 5vw;
+  padding: 0.5;
+  margin: 1vw;
+}
+
+nav a {
+  text-decoration: none;
+  color: #020000;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* Footer */
+footer {
+  background-color: #2b373d;
+  color: #fff;
+  text-align: center;
+  padding: 0.5vw;
+  font-size: 1vw;
+}
+
+footer figure img {
+  width: 20vw; /* Ajusta el tamaño a un 10% del ancho de la pantalla */
+  max-width: 300px; /* Limita el tamaño máximo en pantallas grandes */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
 main {
-  background-color: #4d8cb1;
-  font-weight: 800; /* Peso más grueso para el body */
-  font-size: 30px; /* Tamaño de fuente mayor para el body */
+  font-weight: 800;
+  font-size: 2vw;
 }
 
-#contact{
-  font-weight: 800; /* Peso más grueso para el body */
-  font-size: 20px; /* Tamaño de fuente mayor para el body */
+/* Product section */
+#products {
+  padding: 5vw;
+  background-color: #f9f9f9;
 }
 
-/* Sección y elementos más cercanos */
-section {
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.product-box {
+  background-color: #fff;
+  border: 0.2vw solid #ddd;
+  box-shadow: 0.3vw 0.3vw 1vw rgba(0, 0, 0, 0.1);
+  padding: 2vw;
+  text-align: center;
+  font-weight: bold;
+  width: 20vw;
+  max-width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  min-height: 100vh;
-  gap: 0px; /* Espacio entre los elementos */
+  justify-content: space-between;
 }
 
-/* Estilo para el hgroup */
-#maintitle {
-  margin-bottom: 10px; /* Espacio más cercano al siguiente elemento */
+.product-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5vw;
+  margin: 1vw 0;
 }
 
-/* Estilo para figuras de imagen y video */
-#image, #video {
-  margin: 10px 0; /* Espacio reducido entre imagen, video y otros elementos */
+.product-box h3 {
+  font-size: 1.5vw;
+  margin-bottom: 1vw;
 }
 
-h1, h4 {
-  margin: 5px 0; /* Reduce el espacio entre el h1 y h4 */
+.product-box p {
+  font-size: 1vw;
+  color: #555;
+  margin-bottom: 1vw;
 }
 
-section {
+.price {
+  font-size: 1.2vw;
+  color: #2b373d;
+}
+
+/* Reviews section */
+#reviews {
+  padding: 5vw;
+  font-size: 1.2vw;
+  color: #333;
+}
+
+/* Contact section */
+#contact {
+  padding: 5vw;
+  font-size: 1vw;
+}
+
+#contact form {
   display: flex;
-  flex-direction: column; /* Alinea los elementos en columna */
-  align-items: center; /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  text-align: center; /* Centra el texto dentro del hgroup */
-  min-height: 100vh; /* Opcional: Hace que la sección ocupe toda la altura de la ventana */
+  flex-direction: column;
+  gap: 1vw;
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact label {
+  font-weight: bold;
+  font-size: 1.1vw;
+}
+
+#contact input, #contact textarea, #contact button {
+  padding: 1vw;
+  font-size: 1vw;
+}
+
+#contact button {
+  background-color: #2b373d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background-color: #3d4a54;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-box {
+    width: 40vw;
+    font-size: 3vw;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-box {
+    width: 70vw;
+    font-size: 4vw;
+  }
 }

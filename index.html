@@ -8,41 +8,63 @@
   </head>
   <body>
     <header>
-      <h1> < LJF ></h1>
-      <img src="./img/logo_ljf.png" width="100" />
+      <h1>< LJF ></h1>
+      <img src="./img/logo_ljf.png" alt="LJF Logo" />
     </header>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <main>
-      <section>
-        <hgroup id="maintitle">
-          <h1>Sorry, website under Construction</h1>
-          <h4>Site nearly ready!</h4>
-        </hgroup>
+      <section id="products">
+        <h2>Products</h2>
+        <div class="product-container">
+          <!-- Mistery Box 1 -->
+          <div class="product-box">
+            <h3>Mystery Box 1</h3>
+            <img src="./img/mysterybox.jpg" alt="Mystery Box 1" />
+            <p>A unique surprise awaits inside!</p>
+            <span class="price">$25.00</span>
+          </div>
+          <!-- Mistery Box 2 -->
+          <div class="product-box">
+            <h3>Mystery Box 2</h3>
+            <img src="./img/mysterybox.jpg" alt="Mystery Box 2" />
+            <p>Curated items for adventure lovers!</p>
+            <span class="price">$30.00</span>
+          </div>
+          <!-- Mistery Box 3 -->
+          <div class="product-box">
+            <h3>Mystery Box 3</h3>
+            <img src="./img/mysterybox.jpg" alt="Mystery Box 3" />
+            <p>For the fans of mystery and thrills!</p>
+            <span class="price">$35.00</span>
+          </div>
+          <!-- Mistery Box 4 -->
+          <div class="product-box">
+            <h3>Mystery Box 4</h3>
+            <img src="./img/mysterybox.jpg" alt="Mystery Box 4" />
+            <p>Perfect for collectors and explorers!</p>
+            <span class="price">$40.00</span>
+          </div>
+          <!-- Mistery Box 5 -->
+          <div class="product-box">
+            <h3>Mystery Box 5</h3>
+            <img src="./img/mysterybox.jpg" alt="Mystery Box 5" />
+            <p>An exclusive selection just for you!</p>
+            <span class="price">$45.00</span>
+          </div>
+        </div>
+      </section>
 
-        <figure id="image">
-          <img
-            src="./img/website_under_construction.jpg"
-            alt="under_construction"
-            width="800"
-          />
-        </figure>
-
-        <figure id="video">
-          <iframe
-            src="https://player.vimeo.com/video/794492622?autoplay=1&volume=1"
-            width="640"
-            height="360"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </figure>
+      <section id="reviews">
+        <h2>Reviews</h2>
+        <p>Coming soon: Customer feedback on our Mystery Boxes!</p>
       </section>
 
       <section id="contact">
@@ -51,26 +73,23 @@
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
 
-          <label>
-            Your email:
-            <input type="email" name="email" />
-          </label>
-          <label>
-            Your message:
-            <textarea name="message"></textarea>
-          </label>
+          <label for="email">Your email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Your message:</label>
+          <textarea id="message" name="message"></textarea>
+
           <button type="submit">Send</button>
         </form>
       </section>
     </main>
+
     <footer>
-      <p>&reg; 2024 All Rights Reserved - Buenos Aires Aprende Project</p> 
-       <figure><img
-        src="./img/Logos_BA_Agencia.jpg"
-        alt="ba"
-        width="200"
-      /></figure>
-        
+      <p>&copy; 2024 All Rights Reserved - Buenos Aires Aprende Project</p>
+      <figure>
+        <img src="./img/Logos_BA_Agencia.jpg" alt="BA Logo" />
+      </figure>
     </footer>
   </body>
 </html>
+
