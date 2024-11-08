@@ -8,18 +8,16 @@ body {
 }
 
 header {
-  background-color: #2b373d;
+  background-color: #ffffff;
   color: #fff;
   padding: 0.5vw;
   display: flex;
   align-items: center;
-
   justify-content: space-between;
 }
 
 header img {
-  width: 10vw;
-  
+  width: 5vw;
   height: auto;
 }
 
@@ -34,14 +32,40 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #020000;
+  color: #000000;
   font-weight: bold;
-  font-size: 1vw;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: #2b373d;
 }
+
+/* Media Query para pantallas pequeñas (teléfonos y tabletas) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 2vw;
+    gap: 1vw;
+  }
+
+  header img {
+    width: 10vw; 
+  }
+
+  nav ul {
+    flex-direction: column; 
+    gap: 2vw; 
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: auto;
+  }
+}
+
 
 /* Footer */
 footer {
@@ -53,10 +77,15 @@ footer {
 }
 
 footer figure img {
-  width: 20vw; /* Ajusta el tamaño a un 10% del ancho de la pantalla */
-  max-width: 300px; /* Limita el tamaño máximo en pantallas grandes */
-  height: auto; /* Mantiene la proporción de la imagen */
+  width: 20vw; 
+  max-width: 300px; 
+  height: auto;
 }
+
+
+
+
+
 
 /* Global styles */
 * {
@@ -79,6 +108,13 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2vw;
+}
+
+#products h2 {
+  font-size: clamp(2rem, 2.5vw, 3rem); 
+  text-align: center;
+  color: #2b373d;
+  margin-bottom: 2vw;
 }
 
 .product-box {
@@ -104,32 +140,167 @@ main {
 }
 
 .product-box h3 {
-  font-size: 1.5vw;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
   margin-bottom: 1vw;
 }
 
 .product-box p {
-  font-size: 1vw;
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
   color: #555;
   margin-bottom: 1vw;
 }
 
 .price {
-  font-size: 1.2vw;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
   color: #2b373d;
 }
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+  #products {
+    padding: 4vw; 
+  }
+
+  .product-box {
+    width: 40vw; 
+    padding: 3vw; 
+  }
+
+  .product-box img {
+    width: 20vw;
+  }
+
+  .product-box h3 {
+    font-size: 2.5vw; 
+  }
+
+  .product-box p,
+  .price {
+    font-size: 2vw; 
+  }
+}
+
+/* Responsive adjustments for small mobile devices */
+@media (max-width: 480px) {
+  #products {
+    padding: 3vw;
+  }
+
+  .product-container {
+    gap: 4vw; 
+  }
+
+  .product-box {
+    width: 80vw; 
+    padding: 4vw; 
+  }
+
+  .product-box img {
+    width: 40vw; 
+  }
+
+  .product-box h3 {
+    font-size: 4vw; 
+  }
+
+  .product-box p,
+  .price {
+    font-size: 3vw; 
+  }
+}
+
 
 /* Reviews section */
 #reviews {
   padding: 5vw;
-  font-size: 1.2vw;
+  text-align: center;
   color: #333;
 }
+
+#reviews h2 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  color: #2b373d;
+  margin-bottom: 2vw;
+}
+
+#reviews p {
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  margin-bottom: 3vw;
+}
+
+/* Reviews container with Grid */
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2vw;
+}
+
+/* Individual review card */
+.review-card {
+  background-color: #fff;
+  border: 0.2vw solid #ddd;
+  box-shadow: 0.3vw 0.3vw 1vw rgba(0, 0, 0, 0.1);
+  padding: 2vw;
+  border-radius: 0.5vw;
+  text-align: left;
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
+}
+
+.review-card h3 {
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  color: #2b373d;
+  margin-bottom: 0.5vw;
+}
+
+.review-card .box {
+  display: block;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  color: #666;
+  margin-bottom: 0.5vw;
+}
+
+.review-card .rating {
+  font-weight: bold;
+  color: #555;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  margin-bottom: 1vw;
+}
+
+.review-card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #reviews {
+    padding: 4vw;
+  }
+
+  .review-card {
+    padding: 3vw;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #reviews {
+    padding: 3vw;
+  }
+
+  .review-card {
+    padding: 4vw;
+    font-size: 1rem;
+  }
+}
+
+
 
 /* Contact section */
 #contact {
   padding: 5vw;
   font-size: 1vw;
+  background-color: #f9f9f9;
 }
 
 #contact form {
@@ -146,7 +317,9 @@ main {
   font-size: 1.1vw;
 }
 
-#contact input, #contact textarea, #contact button {
+#contact input,
+#contact textarea,
+#contact button {
   padding: 1vw;
   font-size: 1vw;
 }
@@ -162,22 +335,61 @@ main {
   background-color: #3d4a54;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .product-box {
-    width: 40vw;
-    font-size: 3vw;
+/* Media Query para pantallas pequeñas (teléfonos) */
+@media (max-width: 600px) {
+  #contact {
+    padding: 8vw; 
+    font-size: 3vw; 
   }
 
-  nav ul {
-    flex-direction: column;
-    align-items: center;
+  #contact form {
+    width: 100%; 
+    gap: 3vw; 
+  }
+
+  #contact label {
+    font-size: 4vw; 
+  }
+
+  #contact input,
+  #contact textarea,
+  #contact button {
+    font-size: 3vw; 
+    padding: 3vw;
+  }
+
+  #contact button {
+    padding: 4vw; 
   }
 }
 
-@media (max-width: 480px) {
-  .product-box {
-    width: 70vw;
-    font-size: 4vw;
+/* Media Query para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  #contact {
+    padding: 6vw; 
+    font-size: 2vw; 
+  }
+
+  #contact form {
+    width: 90%; 
+    gap: 2vw;
+  }
+
+  #contact label {
+    font-size: 2.5vw;
+  }
+
+  #contact input,
+  #contact textarea,
+  #contact button {
+    font-size: 1.8vw; 
+    padding: 2vw;
+  }
+
+  #contact button {
+    padding: 2.5vw; 
   }
 }
+
+
+

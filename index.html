@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LJF Market</title>
+    <title>Mystery Market</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>< LJF ></h1>
-      <img src="./img/logo_ljf.png" alt="LJF Logo" />
+      <img
+        src="img\logo.jpg"
+        alt="logo"
+      />
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
 
     <main>
       <section id="products">
@@ -64,8 +66,40 @@
 
       <section id="reviews">
         <h2>Reviews</h2>
-        <p>Coming soon: Customer feedback on our Mystery Boxes!</p>
+        <p>Customer feedback on our Mystery Boxes!</p>
+        
+        <div class="reviews-container">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <h3>Leonel Messi</h3>
+            <span class="box">Mystery Box: #1</span>
+            <span class="rating">Rating: 9/10</span>
+            <p>Amazing mystery box! The items inside were beyond my expectations.</p>
+          </div>
+          <!-- Review 2 -->
+          <div class="review-card">
+            <h3>Franco Colapinto</h3>
+            <span class="box">Mystery Box: #2</span>
+            <span class="rating">Rating: 8/10</span>
+            <p>Good quality items. Would love to see more variety in future boxes.</p>
+          </div>
+          <!-- Review 3 -->
+          <div class="review-card">
+            <h3>Juan Sebastian Veron</h3>
+            <span class="box">Mystery Box: #3</span>
+            <span class="rating">Rating: 10/10</span>
+            <p>The best purchase I’ve made! Absolutely loved every item in the box.</p>
+          </div>
+          <!-- Review 4 -->
+          <div class="review-card">
+            <h3>Andrea Pirlo</h3>
+            <span class="box">Mystery Box: #5</span>
+            <span class="rating">Rating: 7/10</span>
+            <p>Good value for the price, but some items felt a bit repetitive.</p>
+          </div>
+        </div>
       </section>
+
 
       <section id="contact">
         <h2>Contact us</h2>
@@ -92,4 +126,3 @@
     </footer>
   </body>
 </html>
-
