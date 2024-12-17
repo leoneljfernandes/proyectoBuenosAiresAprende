@@ -184,3 +184,23 @@ function crearListado(){
     }
     console.log(productos);
 }
+
+
+// Función para generar copos de nieve
+(function createSnowflakes() {
+    const snowflakesContainer = document.querySelector('.snowflakes');
+    const numberOfSnowflakes = 50; // Cambia esto para agregar más o menos copos
+
+    for (let i = 0; i < numberOfSnowflakes; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.textContent = '❄';
+        snowflake.style.left = `${Math.random() * 100}%`;
+        snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Duración aleatoria
+        snowflake.style.animationDelay = `${Math.random() * 5}s`; // Retraso aleatorio
+        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`; // Tamaño aleatorio
+        snowflake.style.opacity = Math.random(); // Opacidad aleatoria
+
+        snowflakesContainer.appendChild(snowflake);
+    }
+})();

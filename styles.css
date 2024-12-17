@@ -446,3 +446,64 @@ main {
   }
 }
 
+
+
+
+
+/* COPOS DE NIEVE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e1e1e;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+}
+
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; 
+  z-index: 9999;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  font-size: 24px;
+  color: white;
+  animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+      transform: translateY(-100px);
+  }
+  100% {
+      transform: translateY(100vh);
+  }
+}
+
+.snowflake:nth-child(odd) {
+  animation-duration: 8s;
+}
+
+.snowflake:nth-child(even) {
+  animation-duration: 12s;
+}
+
+.snowflake:nth-child(3) {
+  animation-duration: 15s;
+}
+
+.snowflake {
+  animation-delay: calc(-10s * var(--i));
+  font-size: calc(10px + 20 * var(--i));
+}
