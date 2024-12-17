@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <img src="img\logo.jpg" alt="logo" />
+      <img src="img\logo_christmas.png" alt="logo" />
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#home">Home</a>
@@ -31,13 +31,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#products">Products</a>
+                <a class="nav-link" href="#products">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#reviews">Reviews</a>
+                <a class="nav-link" href="#reviews">Reseñas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link" href="#contact">Contacto</a>
               </li>
             </ul>
           </div>
@@ -47,49 +47,63 @@
 
     <main>
       <section id="products">
-        <h2>Products</h2>
+        <h2>Productos</h2>
         <div class="product-container">
           <!-- Mistery Box 1 -->
           <div class="product-box">
             <h3>Mystery Box 1</h3>
-            <img src="./img/mysterybox.jpg" alt="Mystery Box 1" />
-            <p>A unique surprise awaits inside!</p>
+            <img src="./img/mystery_box_christmas.jpg" alt="Mystery Box 1" />
+            <p>Regalos para la familia, bufandas, medias y mas!</p>
+            <button class="info-button" data-id="1">Mas Info.</button>
             <span class="price">$25.00</span>
+            <div class="detailed-description" id="description-1"></div>
           </div>
           <!-- Mistery Box 2 -->
           <div class="product-box">
             <h3>Mystery Box 2</h3>
-            <img src="./img/mysterybox.jpg" alt="Mystery Box 2" />
-            <p>Curated items for adventure lovers!</p>
+            <img src="./img/mystery_box_christmas.jpg" alt="Mystery Box 2" />
+            <p>Regalos para los chicas/os, remeras, gorros y mas!</p>
+            <button class="info-button" data-id="2">Mas Info.</button>
             <span class="price">$30.00</span>
+            <div class="detailed-description" id="description-2"></div>
           </div>
           <!-- Mistery Box 3 -->
           <div class="product-box">
             <h3>Mystery Box 3</h3>
-            <img src="./img/mysterybox.jpg" alt="Mystery Box 3" />
-            <p>For the fans of mystery and thrills!</p>
+            <img src="./img/mystery_box_christmas.jpg" alt="Mystery Box 3" />
+            <p>Regalos para la familia! Sweaters, buzos y mas!</p>
+            <button class="info-button" data-id="3">Mas Info.</button>
             <span class="price">$35.00</span>
+            <div class="detailed-description" id="description-3"></div>
           </div>
           <!-- Mistery Box 4 -->
           <div class="product-box">
             <h3>Mystery Box 4</h3>
-            <img src="./img/mysterybox.jpg" alt="Mystery Box 4" />
-            <p>Perfect for collectors and explorers!</p>
+            <img src="./img/mystery_box_christmas.jpg" alt="Mystery Box 4" />
+            <p>Juguetes para niñas y niños de 3 a 5 años de edad</p>
+            <button class="info-button" data-id="4">Mas Info.</button>
             <span class="price">$40.00</span>
+            <div class="detailed-description" id="description-4"></div>
           </div>
           <!-- Mistery Box 5 -->
           <div class="product-box">
             <h3>Mystery Box 5</h3>
-            <img src="./img/mysterybox.jpg" alt="Mystery Box 5" />
-            <p>An exclusive selection just for you!</p>
+            <img src="./img/mystery_box_christmas.jpg" alt="Mystery Box 5" />
+            <p>Juguetes para niños y niñas de todas las edades</p>
+            <button class="info-button" data-id="5">Mas Info.</button>
             <span class="price">$45.00</span>
+            <div class="detailed-description" id="description-5"></div>
           </div>
+        </div>
+        <div class="more-products">
+          <button onclick="generarListaProductos()">Mas productos</button>
+          <div class="product-container"></div>
         </div>
       </section>
 
       <section id="reviews">
-        <h2>Reviews</h2>
-        <p>Customer feedback on our Mystery Boxes!</p>
+        <h2>Reseñas recibidas</h2>
+        <p>Nuestros clientes!</p>
 
         <div class="reviews-container">
           <!-- Review 1 -->
@@ -134,18 +148,18 @@
       </section>
 
       <section id="contact">
-        <h2>Contact us</h2>
-        <form action="https://formspree.io/f/xrbggkog" method="POST">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+        <h2>Dejanos tu mensaje!</h2>
+        <form action="https://formspree.io/f/xrbggkog" method="POST"  onsubmit="return verificarFormulario()">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name"  />
 
-          <label for="email">Your email:</label>
-          <input type="email" id="email" name="email" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
 
-          <label for="message">Your message:</label>
+          <label for="message">Mensaje:</label>
           <textarea id="message" name="message"></textarea>
 
-          <button type="submit">Send</button>
+          <button type="submit">Enviar</button>
         </form>
       </section>
     </main>
@@ -156,5 +170,6 @@
         <img src="./img/Logos_BA_Agencia.jpg" alt="BA Logo" />
       </figure>
     </footer>
+    <script src="scripts.js"></script>
   </body>
 </html>
