@@ -100,6 +100,13 @@ main {
   background-repeat: no-repeat;
   height: min-height;
   margin-bottom: 50px;
+  text-align: center;
+}
+
+#products h2 {
+  font-size: 4vw; /* Tamaño relativo para que se ajuste a la pantalla */
+  color: #333; /* Ajusta el color del texto según tu diseño */
+  margin-bottom: 20px; /* Espacio debajo del título */
 }
 
 
@@ -397,6 +404,17 @@ main {
     width: 10vw;
   }
 
+  #products {
+    background-size: contain;
+    background-position: top center;
+    padding: 10vw;
+  }
+
+  #products h2 {
+    font-size: 6vw; /* Ajustar el tamaño del título para pantallas pequeñas */
+    margin-bottom: 15px; /* Reducir el margen en pantallas pequeñas */
+  }
+
   .product-box {
     width: 40vw;
     padding: 3vw;
@@ -417,6 +435,15 @@ main {
     font-size: 0.9rem; 
     padding: 0.8em;
   }
+  #contact h2 {
+    font-size: 3.8vw; 
+    margin-bottom: 10px; 
+  }
+
+  #contact label {
+    font-size: 2.5vw; 
+    margin-bottom: 10px; 
+  }
 }
 
 @media (max-width: 480px) {
@@ -428,6 +455,17 @@ main {
 
   header img {
     width: 20vw;
+  }
+
+  #products {
+    background-size: contain;
+    background-position: top center;
+    padding: 15vw;
+  }
+
+  #products h2 {
+    font-size: 8vw; 
+    margin-bottom: 10px;
   }
 
   .product-box {
@@ -443,6 +481,16 @@ main {
   #contact {
     padding: 3vw;
     font-size: 3vw;
+  }
+
+  #contact h2 {
+    font-size: 3vw; 
+    margin-bottom: 10px; 
+  }
+
+  #contact label {
+    font-size: 2vw; 
+    margin-bottom: 10px;
   }
 }
 
