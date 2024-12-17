@@ -85,6 +85,7 @@ var edad = prompt("Ingrese su edad:", "");
 
 verificarEdad(nombre, edad);
 */
+/*
 function calcularPrecio(precio, iva){
     if(iva!=0){
         let total = precio + (precio*(iva/100));
@@ -99,3 +100,20 @@ var precio = parseFloat(prompt("Ingrese precio: ",""));
 var iva = parseFloat(prompt("Si desea ingresar el valor de IVA ingrese un nro, de lo contrario ingrese 0: ",""));
 
 calcularPrecio(precio, iva);
+
+*/
+function cambiarTexto() {
+    // Acceder al párrafo usando su ID y cambiar su contenido
+    document.getElementById("miParrafo").textContent = "El texto ha sido modificado con JavaScript";
+}
+
+function anadirElemento(){
+    const elem = document.createElement("li");
+    elem.textContent = "Nuevo elemento";
+
+    const lista = document.getElementById("miLista");
+    lista.appendChild(elem);
+
+    alert("Elemento anadido a la lista");
+
+}

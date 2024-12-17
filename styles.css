@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+/* General */
 body {
   background-color: #ffffff;
   font-family: 'Lato', sans-serif;
@@ -7,6 +8,7 @@ body {
   padding: 0;
 }
 
+/* Header */
 header {
   background-color: #ffffff;
   color: #fff;
@@ -21,51 +23,42 @@ header img {
   height: auto;
 }
 
-/* Navbar */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 5vw;
-  padding: 0.5;
-  margin: 1vw;
+/* Navbar de Bootstrap */
+.navbar {
+  background-color: #ffffff; /* Fondo de la navbar */
+  padding: 1vw;
 }
 
-nav a {
-  text-decoration: none;
-  color: #000000;
+/* Links de navegación */
+.navbar .nav-link {
+  color: #000000; /* Color de los enlaces */
   font-weight: bold;
   font-size: clamp(1rem, 1.2vw, 1.5rem);
+  text-decoration: none;
 }
 
-nav a:hover {
+.navbar .nav-link:hover {
+  color: #2b373d; /* Efecto hover */
+}
+
+/* Logo o marca */
+.navbar-brand {
+  color: #000000;
+  font-weight: bold;
+}
+
+.navbar-brand:hover {
   color: #2b373d;
 }
 
-/* Media Query para pantallas pequeñas (teléfonos y tabletas) */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 2vw;
-    gap: 1vw;
-  }
-
-  header img {
-    width: 10vw; 
-  }
-
-  nav ul {
-    flex-direction: column; 
-    gap: 2vw; 
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav a {
-    font-size: auto;
-  }
+/* Botón de menú responsivo */
+.navbar-toggler {
+  border-color: #000000;
 }
 
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280,0,0,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
 
 /* Footer */
 footer {
@@ -77,15 +70,10 @@ footer {
 }
 
 footer figure img {
-  width: 20vw; 
-  max-width: 300px; 
+  width: 20vw;
+  max-width: 300px;
   height: auto;
 }
-
-
-
-
-
 
 /* Global styles */
 * {
@@ -111,7 +99,7 @@ main {
 }
 
 #products h2 {
-  font-size: clamp(2rem, 2.5vw, 3rem); 
+  font-size: clamp(2rem, 2.5vw, 3rem);
   text-align: center;
   color: #2b373d;
   margin-bottom: 2vw;
@@ -155,61 +143,6 @@ main {
   color: #2b373d;
 }
 
-/* Responsive adjustments for tablets */
-@media (max-width: 768px) {
-  #products {
-    padding: 4vw; 
-  }
-
-  .product-box {
-    width: 40vw; 
-    padding: 3vw; 
-  }
-
-  .product-box img {
-    width: 20vw;
-  }
-
-  .product-box h3 {
-    font-size: 2.5vw; 
-  }
-
-  .product-box p,
-  .price {
-    font-size: 2vw; 
-  }
-}
-
-/* Responsive adjustments for small mobile devices */
-@media (max-width: 480px) {
-  #products {
-    padding: 3vw;
-  }
-
-  .product-container {
-    gap: 4vw; 
-  }
-
-  .product-box {
-    width: 80vw; 
-    padding: 4vw; 
-  }
-
-  .product-box img {
-    width: 40vw; 
-  }
-
-  .product-box h3 {
-    font-size: 4vw; 
-  }
-
-  .product-box p,
-  .price {
-    font-size: 3vw; 
-  }
-}
-
-
 /* Reviews section */
 #reviews {
   padding: 5vw;
@@ -235,7 +168,6 @@ main {
   gap: 2vw;
 }
 
-/* Individual review card */
 .review-card {
   background-color: #fff;
   border: 0.2vw solid #ddd;
@@ -270,31 +202,6 @@ main {
   color: #666;
   line-height: 1.5;
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #reviews {
-    padding: 4vw;
-  }
-
-  .review-card {
-    padding: 3vw;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #reviews {
-    padding: 3vw;
-  }
-
-  .review-card {
-    padding: 4vw;
-    font-size: 1rem;
-  }
-}
-
-
 
 /* Contact section */
 #contact {
@@ -335,61 +242,51 @@ main {
   background-color: #3d4a54;
 }
 
-/* Media Query para pantallas pequeñas (teléfonos) */
-@media (max-width: 600px) {
-  #contact {
-    padding: 8vw; 
-    font-size: 3vw; 
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 2vw;
+    gap: 1vw;
   }
 
-  #contact form {
-    width: 100%; 
-    gap: 3vw; 
+  header img {
+    width: 10vw;
   }
 
-  #contact label {
-    font-size: 4vw; 
-  }
-
-  #contact input,
-  #contact textarea,
-  #contact button {
-    font-size: 3vw; 
+  .product-box {
+    width: 40vw;
     padding: 3vw;
   }
 
-  #contact button {
-    padding: 4vw; 
+  .review-card {
+    padding: 3vw;
+    font-size: 1.2rem;
   }
-}
 
-/* Media Query para pantallas medianas (tabletas) */
-@media (min-width: 601px) and (max-width: 1024px) {
   #contact {
-    padding: 6vw; 
-    font-size: 2vw; 
-  }
-
-  #contact form {
-    width: 90%; 
-    gap: 2vw;
-  }
-
-  #contact label {
-    font-size: 2.5vw;
-  }
-
-  #contact input,
-  #contact textarea,
-  #contact button {
-    font-size: 1.8vw; 
-    padding: 2vw;
-  }
-
-  #contact button {
-    padding: 2.5vw; 
+    padding: 4vw;
+    font-size: 2vw;
   }
 }
 
+@media (max-width: 480px) {
+  header img {
+    width: 20vw;
+  }
 
+  .product-box {
+    width: 80vw;
+    padding: 4vw;
+  }
 
+  .review-card {
+    padding: 4vw;
+    font-size: 1rem;
+  }
+
+  #contact {
+    padding: 3vw;
+    font-size: 3vw;
+  }
+}

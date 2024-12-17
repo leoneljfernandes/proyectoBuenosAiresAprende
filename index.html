@@ -5,20 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mystery Market</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <header>
-      <img
-        src="img\logo.jpg"
-        alt="logo"
-      />
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <img src="img\logo.jpg" alt="logo" />
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#home">Home</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#products">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#reviews">Reviews</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -67,39 +90,48 @@
       <section id="reviews">
         <h2>Reviews</h2>
         <p>Customer feedback on our Mystery Boxes!</p>
-        
+
         <div class="reviews-container">
           <!-- Review 1 -->
           <div class="review-card">
             <h3>Lionel Messi</h3>
             <span class="box">Mystery Box: #1</span>
             <span class="rating">Rating: 9/10</span>
-            <p>Amazing mystery box! The items inside were beyond my expectations.</p>
+            <p>
+              Amazing mystery box! The items inside were beyond my expectations.
+            </p>
           </div>
           <!-- Review 2 -->
           <div class="review-card">
             <h3>Franco Colapinto</h3>
             <span class="box">Mystery Box: #2</span>
             <span class="rating">Rating: 8/10</span>
-            <p>Good quality items. Would love to see more variety in future boxes.</p>
+            <p>
+              Good quality items. Would love to see more variety in future
+              boxes.
+            </p>
           </div>
           <!-- Review 3 -->
           <div class="review-card">
             <h3>Juan Sebastian Veron</h3>
             <span class="box">Mystery Box: #3</span>
             <span class="rating">Rating: 10/10</span>
-            <p>The best purchase I’ve made! Absolutely loved every item in the box.</p>
+            <p>
+              The best purchase I’ve made! Absolutely loved every item in the
+              box.
+            </p>
           </div>
           <!-- Review 4 -->
           <div class="review-card">
             <h3>Andrea Pirlo</h3>
             <span class="box">Mystery Box: #5</span>
             <span class="rating">Rating: 7/10</span>
-            <p>Good value for the price, but some items felt a bit repetitive.</p>
+            <p>
+              Good value for the price, but some items felt a bit repetitive.
+            </p>
           </div>
         </div>
       </section>
-
 
       <section id="contact">
         <h2>Contact us</h2>
