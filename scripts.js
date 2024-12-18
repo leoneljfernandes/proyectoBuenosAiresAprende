@@ -140,13 +140,14 @@
     1: "Hasta 2 bufandas, 2 pares de medias y 1 gorro navideño",
     2: "2 remeras navideñas para los niños y niñas, gorros y medias navideñas",
     3: "Hasta 3 swaters, 1 buzo y 3 pares de medias navideñas",
-    4: "Jueguetes para niñas y niños de 3 a 5 años de edad",
-    5: "Jueguetes para niños y niñas de todas las edades"
+    4: "Juguetes para niñas y niños de 3 a 5 años de edad",
+    5: "Juguetes para niños y niñas de todas las edades"
   };
-
+  
   function descripcionDetallada(event) {
-    const button = event.target;
-    const productId = button.getAttribute("data-id");
+    event.preventDefault(); // Evita que el enlace recargue la página
+    const link = event.target; // Obtén el elemento que disparó el evento
+    const productId = link.getAttribute("data-id");
     const description = detailedDescriptions[productId];
     const descriptionContainer = document.getElementById(`description-${productId}`);
   
@@ -160,6 +161,7 @@
       }
     }
   }
+  
   
 document.querySelectorAll(".info-button").forEach(button => {
     button.addEventListener("click", descripcionDetallada);
@@ -204,3 +206,34 @@ function crearListado(){
         snowflakesContainer.appendChild(snowflake);
     }
 })();
+
+
+// Referencias a elementos del DOM
+const cartSidebar = document.getElementById('cartSidebar');
+const toggleCart = document.getElementById('toggleCart');
+const closeCart = document.getElementById('closeCart');
+
+// Abrir el carrito
+toggleCart.addEventListener('click', () => {
+  cartSidebar.classList.add('open');
+});
+
+// Cerrar el carrito
+closeCart.addEventListener('click', () => {
+  cartSidebar.classList.remove('open');
+});
+
+// Función para agregar un producto al carrito (ejemplo básico)
+function addToCart(productName, productPrice) {
+  const cartItems = document.getElementById('cartItems');
+  const cartTotal = document.getElementById('cartTotal');
+
+  const newItem = document.createElement('li');
+  newItem.innerHTML = `${productName} <span>$${productPrice}</span>`;
+  cartItems.appendChild(newItem);
+
+  // Actualizar el total
+  const currentTotal = parseFloat(cartTotal.textContent.replace('Total: $', ''));
+  const newTotal = currentTotal + parseFloat(productPrice);
+  cartTotal.textContent = `Total: $${newTotal.toFixed(2)}`;
+}
