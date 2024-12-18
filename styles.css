@@ -401,72 +401,74 @@ main {
   background-color: #3d4a54;
 }
 
-/* Estilos básicos del carrito */
+
 .cart-sidebar {
   position: fixed;
   top: 0;
-  right: -30vw; /* Fuera de la vista inicialmente, equivalente al 30% del ancho de la ventana */
-  width: 30vw; /* Ancho del carrito relativo al ancho de la ventana */
+  right: -30vw;
+  width: 30vw;
   display: flex;
-  flex-direction: column; /* Organiza elementos en columna */
-  justify-content: space-between; /* Espacio entre los elementos */
-  height: 100%; /* Altura completa de la ventana */
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
   background-color: #f7f7f7;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-  padding: 2vh; /* Espaciado interno relativo a la altura de la ventana */
+  padding: 2vh;
   overflow-y: auto;
   transition: right 0.3s ease-in-out;
-  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-  font-size: 2.5vh; /* Tamaño relativo a la altura de la ventana */
-  font-weight: bold; /* Resalta el título */
+  z-index: 1000; 
+  font-size: 2.5vh;
+  font-weight: bold;
 }
 
 .cart-sidebar.open {
-  right: 0; /* Muestra el carrito */
+  right: 0;
 }
 
 .cart-sidebar h2 {
   font-size: 4vh;
-  margin: 0 0 2vh; /* Margen inferior relativo a la altura de la ventana */
+  margin: 0 0 2vh;
 }
 
 .cart-sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 2vh; /* Tamaño base para los textos de la lista */
-  line-height: 1.5; /* Mejora la legibilidad aumentando la altura de línea */
+  font-size: 2vh;
+  line-height: 1.5;
 }
 
 .cart-sidebar li {
-  margin: 1vh 0; /* Margen vertical relativo a la altura de la ventana */
+  margin: 1vh 0;
   display: flex;
   justify-content: space-between;
-  font-size: 1.8vh; /* Ajuste individual para cada ítem */
+  font-size: 1.8vh;
 }
 
 .close-btn {
   background: none;
   border: none;
-  font-size: 2vh; /* Tamaño relativo a la altura de la ventana */
+  font-size: 2vh;
   cursor: pointer;
   position: absolute;
   top: 1vh;
-  right: 1vw; /* Margen derecho relativo al ancho de la ventana */
+  right: 1vw;
+  z-index: 1100;
+  color: #333; 
 }
 
 .cart-toggle-btn {
   position: fixed;
-  bottom: 2vh; /* Distancia inferior relativa a la altura de la ventana */
-  right: 2vw; /* Distancia derecha relativa al ancho de la ventana */
-  padding: 1vh 2vw; /* Espaciado interno relativo */
+  bottom: 2vh;
+  right: 2vw;
+  padding: 1vh 2vw;
   background-color: #9b7306;
   color: white;
   border: none;
   border-radius: 50%;
-  font-size: 1vh; /* Tamaño relativo */
+  font-size: 1vh;
   cursor: pointer;
-  z-index: 999;
+  z-index: 999; 
 }
 
 .cart-toggle-btn:hover {
@@ -474,23 +476,27 @@ main {
 }
 
 .cart-sidebar .price {
-  font-size: 2vh; /* Tamaño específico para los precios */
-  color: #9b7306; /* Color para destacar los precios */
+  font-size: 2vh;
+  color: #9b7306;
 }
 
 .cart-sidebar .quantity {
-  font-size: 1.8vh; /* Ajuste para las cantidades */
+  font-size: 1.8vh;
+}
+
+#cartTotal {
+  margin-top: 10px;
 }
 
 .checkout-btn {
   display: block;
   width: 100%;
-  padding: 1.5vh; /* Espaciado interno relativo */
+  padding: 1.5vh;
   background-color: #9b7306;
   color: white;
   border: none;
-  border-radius: 0.5vh; /* Bordes redondeados relativos */
-  font-size: 1.8vh; /* Tamaño relativo */
+  border-radius: 0.5vh;
+  font-size: 1.8vh;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
@@ -500,6 +506,68 @@ main {
 .checkout-btn:hover {
   background-color: #ad8105;
 }
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 2vh;
+  margin-top: 0.6vh;
+}
+
+.cart-item h4 {
+  font-size: 2.5vh;
+  color: #333;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.cart-item .price {
+  font-size: 1.7vh;
+  color: #9b7306;
+  margin-left: 1vw;
+}
+
+.cart-item .remove-btn {
+  background-color: #e0e0e0;
+  color: #9b7306;
+  border: none;
+  padding: 0.5vh 1vw;
+  font-size: 1.8vh;
+  border-radius: 0.5vh;
+  cursor: pointer;
+}
+
+.cart-item .remove-btn:hover {
+  background-color: #ad8105;
+  color: white;
+}
+
+.cart-item .quantity {
+  width: 3vw;
+  padding: 0.5vh;
+  font-size: 1.8vh;
+  margin-left: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 0.5vh;
+  background-color: white;
+  color: #333;
+}
+
+.cart-item .quantity:focus {
+  outline: none;
+  border-color: #9b7306; 
+}
+
+.cart-item .quantity::-webkit-outer-spin-button,
+.cart-item .quantity::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -520,8 +588,8 @@ main {
   }
 
   #products h2 {
-    font-size: 6vw; /* Ajustar el tamaño del título para pantallas pequeñas */
-    margin-bottom: 15px; /* Reducir el margen en pantallas pequeñas */
+    font-size: 6vw;
+    margin-bottom: 15px; 
   }
 
   .product-box {
@@ -602,15 +670,14 @@ main {
   }
 }
 
-/* Pantallas medianas (tabletas) */
 @media (min-width: 601px) and (max-width: 1024px) {
   .cart-sidebar {
-    width: 40vw; /* El carrito ocupará el 40% del ancho de la ventana */
-    right: -40vw; /* Fuera de la vista inicialmente */
+    width: 40vw; 
+    right: -40vw; 
   }
 
   .cart-sidebar.open {
-    right: 0; /* Muestra el carrito */
+    right: 0; 
   }
 
   .cart-sidebar h2 {
@@ -625,7 +692,7 @@ main {
   }
 
   .cart-toggle-btn {
-    font-size: 2.5vh; /* Ajusta el tamaño del botón */
+    font-size: 2.5vh; 
     padding: 1.2vh 2.5vw;
   }
 
@@ -634,15 +701,14 @@ main {
   }
 }
 
-/* Pantallas grandes (escritorios) */
 @media (min-width: 1025px) {
   .cart-sidebar {
-    width: 25vw; /* El carrito ocupará el 25% del ancho de la ventana */
-    right: -25vw; /* Fuera de la vista inicialmente */
+    width: 25vw; 
+    right: -25vw; 
   }
 
   .cart-sidebar.open {
-    right: 0; /* Muestra el carrito */
+    right: 0; 
   }
 
   .cart-sidebar ul {
