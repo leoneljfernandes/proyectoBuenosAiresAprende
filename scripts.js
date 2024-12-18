@@ -210,9 +210,9 @@ function crearListado() {
   }
 })();
 
+/* CARRITO */
 const cartSidebar = document.getElementById("cartSidebar");
 const toggleCart = document.getElementById("toggleCart");
-const closeCart = document.getElementById("closeCart");
 
 // Función para abrir el carrito
 function openCart() {
@@ -224,9 +224,15 @@ function closeCartFunction() {
   cartSidebar.classList.remove("open");
 }
 
+// Evento para abrir el carrito
 toggleCart.addEventListener("click", openCart);
 
-closeCart.addEventListener("click", closeCartFunction);
+// Agrega el evento del botón de cierre dinámico
+document.addEventListener("click", function (event) {
+  if (event.target.id === "closeCart") {
+    closeCartFunction();
+  }
+});
 
 // Función para agregar un producto al carrito
 function addProductToCart(event) {
@@ -243,21 +249,22 @@ function addProductToCart(event) {
     id: productId,
     name: productName,
     price: productPrice,
+    quantity: 1,
   };
 
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  const existingProduct = carrito.findIndex((item) => item.id === productId);
+  const existingProductIndex = carrito.findIndex(
+    (item) => item.id === productId
+  );
 
-  if (existingProduct === -1) {
+  if (existingProductIndex === -1) {
     carrito.push(product);
   } else {
-    alert("El producto ya está en el carrito!");
-    return;
+    carrito[existingProductIndex].quantity += 1;
   }
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
-
   alert("Producto agregado al carrito!");
   updateCart();
 }
@@ -272,133 +279,97 @@ function removeProductFromCart(event) {
   carrito = carrito.filter((item) => item.id !== productId);
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
-
   alert("Producto eliminado del carrito!");
   updateCart();
+}
 
-  document.addEventListener("DOMContentLoaded", updateCart);
+// Función para actualizar la cantidad de un producto
+function updateProductQuantity(event) {
+  const input = event.target;
+  const productId = input.getAttribute("data-id");
+  const newQuantity = parseInt(input.value);
 
-  const addToCartButtons = document.querySelectorAll(".addToCart");
-  addToCartButtons.forEach((button) => {
-    button.addEventListener("click", addProductToCart);
+  if (newQuantity < 1) {
+    alert("La cantidad debe ser al menos 1.");
+    input.value = 1;
+    return;
+  }
+
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  carrito.forEach((product) => {
+    if (product.id === productId) {
+      product.quantity = newQuantity;
+    }
   });
 
-  /*
-// Función para actualizar la vista del carrito
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  updateCart();
+}
+
+// Función para actualizar el carrito
 function updateCart() {
-  cartSidebar.innerHTML = ""; // Limpiar el contenido actual del carrito
+  cartSidebar.innerHTML = "";
 
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  let total = 0; // Variable para acumular el total del carrito
+  let total = 0;
 
-  // Agregar el botón de cierre del carrito
   const closeButton = document.createElement("button");
   closeButton.id = "closeCart";
   closeButton.classList.add("close-btn");
   closeButton.innerHTML = "✖";
-  closeButton.addEventListener("click", closeCartFunction);
   cartSidebar.appendChild(closeButton);
 
-  // Mostrar los productos en el carrito si hay productos
   if (carrito.length > 0) {
     carrito.forEach((product) => {
       const cartItemElement = document.createElement("div");
       cartItemElement.classList.add("cart-item");
       cartItemElement.innerHTML = `
         <h4>${product.name}</h4>
-        <span>${product.price}</span>
+        <span class="price">${product.price}</span>
+        <input type="number" class="quantity" value="${product.quantity}" min="1" data-id="${product.id}">
         <button class="remove-btn" data-id="${product.id}">Eliminar</button>
       `;
       cartSidebar.appendChild(cartItemElement);
 
-      // Acumular el total
-      total += parseFloat(product.price.replace('$', '').trim()); // Eliminar el símbolo '$' y convertir a número
+      total +=
+        parseFloat(product.price.replace("$", "").trim()) * product.quantity;
     });
 
-    // Mostrar el total en el carrito
-    const totalElement = document.createElement('p');
-    totalElement.id = 'cartTotal';
+    const totalElement = document.createElement("p");
+    totalElement.id = "cartTotal";
     totalElement.textContent = `Total: $${total.toFixed(2)}`;
     cartSidebar.appendChild(totalElement);
   } else {
-    // Si el carrito está vacío, mostrar el mensaje correspondiente
-    const emptyMessage = document.createElement('p');
+    const emptyMessage = document.createElement("p");
     emptyMessage.textContent = "Tu carrito está vacío.";
     cartSidebar.appendChild(emptyMessage);
   }
 
-  // Agregar el botón de finalizar compra
-  const checkoutButton = document.createElement('button');
+  const checkoutButton = document.createElement("button");
   checkoutButton.textContent = "Finalizar Compra";
-  checkoutButton.classList.add('checkout-btn');
+  checkoutButton.classList.add("checkout-btn");
   cartSidebar.appendChild(checkoutButton);
 
-  // Asociar el evento de eliminar a los botones de eliminación
+  // Asignar eventos dinámicos
   const removeButtons = cartSidebar.querySelectorAll(".remove-btn");
   removeButtons.forEach((button) => {
     button.addEventListener("click", removeProductFromCart);
   });
+
+  const quantityInputs = cartSidebar.querySelectorAll(".quantity");
+  quantityInputs.forEach((input) => {
+    input.addEventListener("change", updateProductQuantity);
+  });
 }
 
-*/
+// Evento al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+  updateCart();
 
-  // Función para actualizar el carrito
-  function updateCart() {
-    const cartSidebar = document.getElementById("cartSidebar");
-    cartSidebar.innerHTML = "";
-
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    let total = 0;
-
-    const closeButton = document.createElement("button");
-    closeButton.id = "closeCart";
-    closeButton.classList.add("close-btn");
-    closeButton.innerHTML = "✖";
-    closeButton.addEventListener("click", closeCartFunction);
-    cartSidebar.appendChild(closeButton);
-
-    if (carrito.length > 0) {
-      carrito.forEach((product) => {
-        const cartItemElement = document.createElement("div");
-        cartItemElement.classList.add("cart-item");
-        cartItemElement.innerHTML = `
-        <h4>${product.name}</h4>
-        <span class="price">${product.price}</span>
-        <input type="number" class="quantity" value="${
-          product.quantity || 1
-        }" min="1" data-id="${product.id}">
-        <button class="remove-btn" data-id="${product.id}">Eliminar</button>
-      `;
-        cartSidebar.appendChild(cartItemElement);
-
-        total +=
-          parseFloat(product.price.replace("$", "").trim()) *
-          (product.quantity || 1);
-      });
-
-      const totalElement = document.createElement("p");
-      totalElement.id = "cartTotal";
-      totalElement.textContent = `Total: $${total.toFixed(2)}`;
-      cartSidebar.appendChild(totalElement);
-    } else {
-      const emptyMessage = document.createElement("p");
-      emptyMessage.textContent = "Tu carrito está vacío.";
-      cartSidebar.appendChild(emptyMessage);
-    }
-
-    const checkoutButton = document.createElement("button");
-    checkoutButton.textContent = "Finalizar Compra";
-    checkoutButton.classList.add("checkout-btn");
-    cartSidebar.appendChild(checkoutButton);
-
-    const removeButtons = cartSidebar.querySelectorAll(".remove-btn");
-    removeButtons.forEach((button) => {
-      button.addEventListener("click", removeProductFromCart);
-    });
-
-    const quantityInputs = cartSidebar.querySelectorAll(".quantity");
-    quantityInputs.forEach((input) => {
-      input.addEventListener("change", updateProductQuantity);
-    });
-  }
-}
+  // Agregar eventos a los botones "Agregar al carrito"
+  const addToCartButtons = document.querySelectorAll(".addToCart");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", addProductToCart);
+  });
+});
