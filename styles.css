@@ -92,23 +92,24 @@ main {
 
 /* Product section */
 #products {
-  padding: 5vw;
+  padding: 1vw;
   background-color: #f9f9f9;
   background-image: url('img/guirnalda5.png');
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
   height: min-height;
-  margin-bottom: 50px;
+  margin-top: 1vw;
+  margin-bottom: 2vw;
   text-align: center;
 }
 
 #products h2 {
-  font-size: 4vw; /* Tamaño relativo para que se ajuste a la pantalla */
-  color: #333; /* Ajusta el color del texto según tu diseño */
-  margin-bottom: 20px; /* Espacio debajo del título */
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  text-align: center;
+  color: #2b373d;
+  margin-bottom: 0.4vw;
 }
-
 
 .product-container {
   display: flex;
@@ -148,13 +149,6 @@ main {
 }
 /**/
 
-#products h2 {
-  font-size: clamp(2rem, 2.5vw, 3rem);
-  text-align: center;
-  color: #2b373d;
-  margin-bottom: 2vw;
-}
-
 .product-box {
   background-color: #fff;
   border: 0.2vw solid #ddd;
@@ -169,7 +163,7 @@ main {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin-bottom: 2vw;
+  margin-bottom: 0.1vw;
 }
 
 .product-box img {
@@ -177,25 +171,26 @@ main {
   height: auto;
   border-radius: 0.5vw;
   margin: 1vw 0;
+  margin-bottom: 0.2vw;
 }
 
 .product-box h3 {
   font-size: clamp(1rem, 1.2vw, 1.5rem);
-  margin-bottom: 1vw;
+  margin-bottom: 0.2vw;
 }
 
 .product-box p {
   font-size: clamp(0.9rem, 1vw, 1.2rem);
   color: #555;
-  margin-bottom: 1vw;
+  margin-bottom: 0.5vw;
 }
 
 .product-box button {
   background-color: #d4d4d4;
   color: #000000;
   font-size: clamp(0.9rem, 1vw, 1.2rem);
-  border: 2px;
-  border-radius: 5px;
+  border: 1px;
+  border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
@@ -226,7 +221,7 @@ main {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin-bottom: 2vw;
+  margin-bottom: 0.1vw;
 }
 
 .product-box-new img {
@@ -234,6 +229,7 @@ main {
   height: auto;
   border-radius: 0.5vw;
   margin: 1vw 0;
+  margin-bottom: 0.2vw;
 }
 
 .product-box-new h3 {
@@ -297,17 +293,19 @@ main {
   padding: 5vw;
   text-align: center;
   color: #333;
+  margin-bottom: 0.2vw;
+  margin-top: 0.2vw;
 }
 
 #reviews h2 {
   font-size: clamp(2rem, 2.5vw, 3rem);
   color: #2b373d;
-  margin-bottom: 2vw;
+  margin-bottom: 1vw;
 }
 
 #reviews p {
   font-size: clamp(1rem, 1.2vw, 1.5rem);
-  margin-bottom: 3vw;
+  margin-bottom: 0.5vw;
 }
 
 /* Reviews container with Grid */
