@@ -219,7 +219,6 @@ main {
   color: #ad8105; /* Color al pasar el cursor */
 }
 
-
 /*Nuevos añadidos*/
 .product-box-new {
   background-color: #fff;
@@ -403,7 +402,6 @@ main {
   background-color: #3d4a54;
 }
 
-
 .cart-sidebar {
   position: fixed;
   top: 0;
@@ -418,7 +416,7 @@ main {
   padding: 2vh;
   overflow-y: auto;
   transition: right 0.3s ease-in-out;
-  z-index: 1000; 
+  z-index: 1000;
   font-size: 2.5vh;
   font-weight: bold;
 }
@@ -460,7 +458,7 @@ main {
   margin-bottom: 100vh;
 }
 
-.divisor{
+.divisor {
   margin-top: 1vh;
   margin-bottom: 0.2vh;
 }
@@ -476,7 +474,7 @@ main {
   border-radius: 50%;
   font-size: 1vh;
   cursor: pointer;
-  z-index: 999; 
+  z-index: 999;
 }
 
 .cart-toggle-btn:hover {
@@ -568,7 +566,7 @@ main {
 
 .cart-item .quantity:focus {
   outline: none;
-  border-color: #9b7306; 
+  border-color: #9b7306;
 }
 
 .cart-item .quantity::-webkit-outer-spin-button,
@@ -577,9 +575,6 @@ main {
   margin: 0;
 }
 
-
-
-/* Comentarios */
 #comments {
   padding: 5vw;
   text-align: center;
@@ -628,178 +623,58 @@ main {
   line-height: 1.5;
 }
 
-
-
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 2vw;
-    gap: 1vw;
-  }
-
-  header img {
-    width: 10vw;
-  }
-
-  #products {
-    background-size: contain;
-    background-position: top center;
-    padding: 10vw;
-  }
-
-  #products h2 {
-    font-size: 6vw;
-    margin-bottom: 15px; 
-  }
-
-  .product-box {
-    width: 40vw;
-    padding: 3vw;
-    margin-bottom: 15px;
-  }
-
-  .product-box-new {
-    width: 40vw;
-    padding: 3vw;
-    margin-bottom: 15px;
-  }
-
-  .review-card {
-    padding: 3vw;
-    font-size: 1.2rem;
-  }
-
-  #contact {
+@media (min-width: 768px) {
+  #comments {
     padding: 4vw;
-    font-size: 2vw;
   }
 
-  .detailed-description {
-    font-size: 0.9rem;
-    padding: 0.8em;
-  }
-  #contact h2 {
-    font-size: 3.8vw;
-    margin-bottom: 10px;
+  #comments h2 {
+    font-size: 3rem;
   }
 
-  #contact label {
-    font-size: 2.5vw;
-    margin-bottom: 10px;
+  .comments-container {
+    gap: 3vw;
+  }
+
+  .comment-card {
+    padding: 2.5vw;
+    font-size: 1.1rem;
+  }
+
+  .comment-card h4 {
+    font-size: 1.8rem;
+  }
+
+  .comment-card .box {
+    font-size: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  .detailed-description {
-    font-size: 0.8rem;
-    padding: 0.6em;
+@media (max-width: 767px) {
+  #comments {
+    padding: 6vw;
   }
 
-  header img {
-    width: 20vw;
+  #comments h2 {
+    font-size: 6vw;
   }
 
-  #products {
-    background-size: contain;
-    background-position: top center;
-    padding: 15vw;
+  .comments-container {
+    grid-template-columns: 1fr;
+    gap: 4vw;
   }
 
-  #products h2 {
-    font-size: 8vw;
-    margin-bottom: 10px;
-  }
-
-  .product-box {
-    width: 80vw;
-    padding: 4vw;
-  }
-
-  /**/
-  .product-box-new {
-    width: 80vw;
-    padding: 4vw;
-  }
-  
-  .review-card {
+  .comment-card {
     padding: 4vw;
     font-size: 1rem;
   }
 
-  #contact {
-    padding: 3vw;
-    font-size: 3vw;
+  .comment-card h4 {
+    font-size: 1.5rem;
   }
 
-  #contact h2 {
-    font-size: 3vw;
-    margin-bottom: 10px;
-  }
-
-  #contact label {
-    font-size: 2vw;
-    margin-bottom: 10px;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  .cart-sidebar {
-    width: 40vw; 
-    right: -40vw; 
-  }
-
-  .cart-sidebar.open {
-    right: 0; 
-  }
-
-  .cart-sidebar h2 {
-    font-size: 2.2vh;
-  }
-  .cart-sidebar ul {
-    font-size: 1.8vh;
-  }
-
-  .cart-sidebar li {
-    font-size: 1.7vh;
-  }
-
-  .cart-toggle-btn {
-    font-size: 2.5vh; 
-    padding: 1.2vh 2.5vw;
-  }
-
-  .checkout-btn {
-    font-size: 1.8vh;
-  }
-}
-
-@media (min-width: 1025px) {
-  .cart-sidebar {
-    width: 25vw; 
-    right: -25vw; 
-  }
-
-  .cart-sidebar.open {
-    right: 0; 
-  }
-
-  .cart-sidebar ul {
-    font-size: 2vh;
-  }
-
-  .cart-sidebar li {
-    font-size: 1.8vh;
-  }
-
-  .cart-toggle-btn {
-    font-size: 2vh;
-    padding: 1vh 2vw;
-  }
-
-  .checkout-btn {
-    font-size: 1.8vh;
+  .comment-card .box {
+    font-size: 1.2rem;
   }
 }
 
