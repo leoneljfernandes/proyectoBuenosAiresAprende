@@ -46,7 +46,7 @@ function generarListaProductos() {
   const box = {
     id: 5,
     name: "Mystery Box",
-    price: 25,
+    price: 60,
     description: "",
   };
 
@@ -62,25 +62,25 @@ function generarListaProductos() {
     switch (i) {
       case 0:
         boxAux.description =
-          "Regalos para la familia, bufandas, medias,  y mas!";
+          "Regalos para los adultos de la familia, remeras, medias, y mas!";
         break;
 
       case 1:
         boxAux.description =
-          "Regalos para los chicas/os, remeras, gorros y mas!";
+          "Zapatos de regalo para los chicas/os!";
         break;
 
       case 2:
-        boxAux.description = "Regalos para la familia! Sweaters, buzos y mas!";
+        boxAux.description = "Regalos para los adultos familia! Sweaters, buzos y mas!";
         break;
 
       case 3:
         boxAux.description =
-          "Jueguetes para niñas y niños de 3 a 5 años de edad";
+          "Jueguetes premium para niñas y niños de todas las edades";
         break;
 
       case 4:
-        boxAux.description = "Jueguetes para niños y niñas de todas las edades";
+        boxAux.description = "Zapatos y zapatillas para los adultos sorpresa!";
         break;
 
       default:
@@ -111,8 +111,17 @@ function generarListaProductos() {
     productBox.appendChild(p);
 
     const span = document.createElement("span");
+    span.classList.add("price");
     span.textContent = `$${box.price}`;
     productBox.appendChild(span);
+
+    const button = document.createElement("button");
+    button.classList.add("addToCart");
+    button.id="addToCart";
+    button.setAttribute("data-id", box.id);
+    button.textContent = "Agregar al carrito"; 
+    button.addEventListener("click", addProductToCart);
+    productBox.appendChild(button);
 
     contenedorProductos.appendChild(productBox);
   }
@@ -239,10 +248,10 @@ function addProductToCart(event) {
   const button = event.target;
   const productId = button.getAttribute("data-id");
   const productName = button
-    .closest(".product-box")
+    .closest(".product-box, .product-box-new")
     .querySelector("h3").textContent;
   const productPrice = button
-    .closest(".product-box")
+    .closest(".product-box, .product-box-new")
     .querySelector(".price").textContent;
 
   const product = {
