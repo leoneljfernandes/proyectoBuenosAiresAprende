@@ -454,7 +454,13 @@ main {
   top: 1vh;
   right: 1vw;
   z-index: 1100;
-  color: #333; 
+  color: #333;
+  margin-bottom: 100vh;
+}
+
+.divisor{
+  margin-top: 1vh;
+  margin-bottom: 0.2vh;
 }
 
 .cart-toggle-btn {
@@ -538,6 +544,7 @@ main {
   font-size: 1.8vh;
   border-radius: 0.5vh;
   cursor: pointer;
+  margin-left: 0.2vw;
 }
 
 .cart-item .remove-btn:hover {

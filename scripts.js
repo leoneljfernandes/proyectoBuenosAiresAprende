@@ -320,6 +320,11 @@ function updateCart() {
   closeButton.innerHTML = "✖";
   cartSidebar.appendChild(closeButton);
 
+  const divisor = document.createElement("div");
+  divisor.classList.add("divisor");
+  divisor.innerHTML='<span></span>';
+  cartSidebar.appendChild(divisor);
+
   if (carrito.length > 0) {
     carrito.forEach((product) => {
       const cartItemElement = document.createElement("div");
