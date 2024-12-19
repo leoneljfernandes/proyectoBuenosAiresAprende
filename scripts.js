@@ -66,12 +66,12 @@ function generarListaProductos() {
         break;
 
       case 1:
-        boxAux.description =
-          "Zapatos de regalo para los chicas/os!";
+        boxAux.description = "Zapatos de regalo para los chicas/os!";
         break;
 
       case 2:
-        boxAux.description = "Regalos para los adultos familia! Sweaters, buzos y mas!";
+        boxAux.description =
+          "Regalos para los adultos familia! Sweaters, buzos y mas!";
         break;
 
       case 3:
@@ -117,9 +117,9 @@ function generarListaProductos() {
 
     const button = document.createElement("button");
     button.classList.add("addToCart");
-    button.id="addToCart";
+    button.id = "addToCart";
     button.setAttribute("data-id", box.id);
-    button.textContent = "Agregar al carrito"; 
+    button.textContent = "Agregar al carrito";
     button.addEventListener("click", addProductToCart);
     productBox.appendChild(button);
 
@@ -331,7 +331,7 @@ function updateCart() {
 
   const divisor = document.createElement("div");
   divisor.classList.add("divisor");
-  divisor.innerHTML='<span></span>';
+  divisor.innerHTML = "<span></span>";
   cartSidebar.appendChild(divisor);
 
   if (carrito.length > 0) {
@@ -386,4 +386,37 @@ document.addEventListener("DOMContentLoaded", function () {
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", addProductToCart);
   });
+});
+
+async function readAPI() {
+  try {
+    const resPost = await fetch("https://dummyjson.com/comments");
+    const post = await resPost.json();
+    console.log("Resultado:", post);
+
+    const commentsContainer = document.querySelector(".comments-container");
+    const maxComments = 5;
+
+    post.comments.slice(0,maxComments).forEach((comment) => {
+      const cartComent = document.createElement("div");
+      cartComent.classList.add("comment-box");
+      const commentCard = document.createElement("div");
+      commentCard.classList.add("comment-card");
+      commentCard.innerHTML = `
+        <h4>${comment.user.fullName}</h4>
+        <h6>${comment.body}</h6>
+      `;
+      cartComent.appendChild(commentCard);
+      commentsContainer.appendChild(cartComent);
+    });
+  } catch (error) {
+    console.error("Error:", error);
+  } finally {
+    console.log("Proceso finalizado");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("Página cargada");
+  await readAPI();
 });

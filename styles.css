@@ -164,6 +164,7 @@ main {
   justify-content: space-between;
   position: relative;
   margin-bottom: 0.1vw;
+  opacity: 95%;
 }
 
 .product-box img {
@@ -235,6 +236,7 @@ main {
   justify-content: space-between;
   position: relative;
   margin-bottom: 0.1vw;
+  opacity: 95%;
 }
 
 .product-box-new img {
@@ -576,6 +578,59 @@ main {
 }
 
 
+
+/* Comentarios */
+#comments {
+  padding: 5vw;
+  text-align: center;
+  color: #333;
+  margin-bottom: 0.2vw;
+  margin-top: 0.2vw;
+}
+
+#comments h2 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  color: #2b373d;
+  margin-bottom: 1vw;
+}
+
+.comments-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2vw;
+}
+
+.comment-card {
+  background-color: #fff;
+  border: 0.2vw solid #ddd;
+  box-shadow: 0.3vw 0.3vw 1vw rgba(0, 0, 0, 0.1);
+  padding: 2vw;
+  border-radius: 0.5vw;
+  text-align: left;
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
+}
+
+.comment-card h4 {
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  color: #2b373d;
+  margin-bottom: 0.5vw;
+}
+
+.comment-card .box {
+  display: block;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  color: #666;
+  margin-bottom: 0.5vw;
+}
+
+.comment-card h6 {
+  color: #666;
+  line-height: 1.5;
+}
+
+
+
+
 /* Responsive styles */
 @media (max-width: 768px) {
   header {
@@ -600,6 +655,12 @@ main {
   }
 
   .product-box {
+    width: 40vw;
+    padding: 3vw;
+    margin-bottom: 15px;
+  }
+
+  .product-box-new {
     width: 40vw;
     padding: 3vw;
     margin-bottom: 15px;
@@ -656,6 +717,12 @@ main {
     padding: 4vw;
   }
 
+  /**/
+  .product-box-new {
+    width: 80vw;
+    padding: 4vw;
+  }
+  
   .review-card {
     padding: 4vw;
     font-size: 1rem;
