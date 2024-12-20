@@ -405,6 +405,8 @@ async function readAPI() {
     const commentsContainer = document.querySelector(".comments-container");
     const maxComments = 5;
 
+    post.comments.sort(() => Math.random() - 0.5);
+
     post.comments.slice(0,maxComments).forEach((comment) => {
       const cartComent = document.createElement("div");
       cartComent.classList.add("comment-box");
