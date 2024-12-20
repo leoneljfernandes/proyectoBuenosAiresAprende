@@ -8,7 +8,10 @@ Este proyecto es una página web de e-commerce ficticia llamada **Mystery Market
 
 ## Capturas de Pantalla
 
-![Captura de pantalla de la página principal](./img/mysterybox_screenshot.png) <!-- Agrega una captura de pantalla aquí si es posible -->
+![Captura de pantalla de la página principal](./img/mysterybox_screenshot.png)
+(./img/mysterybox_screenshot2.png)
+(./img/mysterybox_screenshot3.png)
+(./img/mysterybox_screenshot4.png)
 
 ## Estructura del Proyecto
 
