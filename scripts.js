@@ -203,21 +203,29 @@ function crearListado() {
 // Función para generar copos de nieve
 (function createSnowflakes() {
   const snowflakesContainer = document.querySelector(".snowflakes");
-  const numberOfSnowflakes = 50; // Cambia esto para agregar más o menos copos
+  const numberOfSnowflakes = 50;
 
   for (let i = 0; i < numberOfSnowflakes; i++) {
     const snowflake = document.createElement("div");
     snowflake.classList.add("snowflake");
-    snowflake.textContent = "❄";
-    snowflake.style.left = `${Math.random() * 100}%`;
-    snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Duración aleatoria
-    snowflake.style.animationDelay = `${Math.random() * 5}s`; // Retraso aleatorio
-    snowflake.style.fontSize = `${Math.random() * 10 + 10}px`; // Tamaño aleatorio
-    snowflake.style.opacity = Math.random(); // Opacidad aleatoria
 
+    const snowflakeImg = document.createElement("img");
+    snowflakeImg.src = "img/snowflake.png"; 
+    snowflakeImg.alt = "";
+
+    snowflake.style.left = `${Math.random() * 100}%`;
+    snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; 
+    snowflake.style.animationDelay = `${Math.random() * 5}s`; 
+    snowflake.style.opacity = Math.random();
+    snowflakeImg.style.width = `${Math.random() * 10 + 10}px`; 
+    snowflakeImg.style.height = "auto"; 
+
+    snowflake.appendChild(snowflakeImg);
     snowflakesContainer.appendChild(snowflake);
   }
 })();
+
+
 
 /* CARRITO */
 const cartSidebar = document.getElementById("cartSidebar");
