@@ -131,18 +131,16 @@ function generarListaProductos() {
 
   const hideButton = document.createElement("button");
   hideButton.textContent = "Ocultar";
+  hideButton.href = "#products";
   hideButton.classList.add("hide-button");
 
-  // Mostrar el botón "Ocultar"
   document.querySelector(".more-products").appendChild(hideButton);
 
-  // Acción al hacer clic en el botón "Ocultar"
   hideButton.addEventListener("click", function () {
-    // Eliminar los productos mostrados
     const products = document.querySelectorAll(".product-box-new");
     products.forEach((product) => product.remove());
+    window.location.href = "#products";
 
-    // Volver a mostrar el botón "Mas productos" y ocultar el botón "Ocultar"
     document.querySelector(".more-products button").style.display = "block";
     hideButton.remove();
   });
@@ -203,7 +201,7 @@ function crearListado() {
 // Función para generar copos de nieve
 (function createSnowflakes() {
   const snowflakesContainer = document.querySelector(".snowflakes");
-  const numberOfSnowflakes = 50;
+  const numberOfSnowflakes = 200;
 
   for (let i = 0; i < numberOfSnowflakes; i++) {
     const snowflake = document.createElement("div");
